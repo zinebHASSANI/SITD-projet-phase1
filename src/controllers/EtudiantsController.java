@@ -79,8 +79,7 @@ public class EtudiantsController {
         EtudiantServices.updateEtd(id, nom,prenom,email,apogee, FiliereServices.getFiliereById(idFil));
 
         showEtudiants();
-        showMenu();
-    }
+        showMenu();}
     public static void destroyEtudiant(){
         showEtudiants();
         int id = Main.getIntInput("Sélecionnez un etudiant par id :");

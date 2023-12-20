@@ -60,8 +60,6 @@ public class EnseignantsController {
 
         showEnseignants();
         showMenu();
-
-
     }
     public static void editEnseignant(){
         showEnseignants();

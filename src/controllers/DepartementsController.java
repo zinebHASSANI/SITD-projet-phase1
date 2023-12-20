@@ -70,6 +70,7 @@ public class DepartementsController {
 
         showDepartements();
         showMenu();
+
     }
     public static void destroyDepartement(){
         showDepartements();

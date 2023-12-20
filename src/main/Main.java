@@ -96,6 +96,7 @@ import java.util.Scanner;
                 enseignant.setId(DB.getEnsId());
                 DB.enseignants.add(enseignant);
                 showPrincipalMenu();
+
             }
         }
 

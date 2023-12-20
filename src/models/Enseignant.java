@@ -1,6 +1,7 @@
 package models;
 import java.util.ArrayList;
 public class Enseignant {
+
     private int id;
     private String nom;
     private String prenom;

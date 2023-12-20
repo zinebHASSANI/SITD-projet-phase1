@@ -6,6 +6,7 @@ import models.Filiere;
 import java.util.ArrayList;
 
      public class FiliereServices {
+
          public static Filiere addFiliere(String intitule,Enseignant chef, Departement... dept)
          {
              Filiere filiere = new Filiere();

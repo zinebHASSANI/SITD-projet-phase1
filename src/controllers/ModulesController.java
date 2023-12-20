@@ -83,9 +83,7 @@ public class ModulesController {
         showModules();
         int id = Main.getIntInput("Sélecionnez un departement par id :");
         ModuleServices.deleteModuleById(id);
-        showModules();
-
-    }
+        showModules();}
 }
 
 

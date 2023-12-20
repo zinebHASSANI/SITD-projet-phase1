@@ -87,9 +87,7 @@ public class FilieresController {
         showFilieres();
         int id = Main.getIntInput("Sélecionnez une filiere par id :");
         FiliereServices.deleteFiliereById(id);
-        showFilieres();
-
-    }
+        showFilieres();}
 }
 
 

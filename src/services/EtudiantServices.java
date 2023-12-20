@@ -56,7 +56,7 @@ public class EtudiantServices {
        public static ArrayList<Etudiant> getAllEtd(){
            return  DB.etudiants;
        }
-   }
+     }
 
 
 

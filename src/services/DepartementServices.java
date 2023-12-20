@@ -44,6 +44,6 @@
          public static ArrayList<Departement> getAllDept(){
 
              return  DB.departements;
-         }
+          }
 
 }
