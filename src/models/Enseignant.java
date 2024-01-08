@@ -12,6 +12,7 @@ public class Enseignant {
 
 
     public Enseignant() {
+
     }
     public Enseignant(int id,String nom, String prenom, String email, String grade){
         this.nom = nom;

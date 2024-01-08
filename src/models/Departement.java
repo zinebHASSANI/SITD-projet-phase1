@@ -67,6 +67,7 @@ import java.util.ArrayList;
 
         @Override
         public String toString() {
+
             return "Departement{" +
                     "id=" + id +
                     ", intitule='" + intitule + '\'' +

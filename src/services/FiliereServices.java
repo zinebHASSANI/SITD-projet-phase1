@@ -14,7 +14,6 @@ import java.util.ArrayList;
              filiere.setChef(chef);
              filiere.setId(DB.getFilId());
 
-
              if (dept.length > 0) {
                  filiere.setDept(dept[0]);
              }

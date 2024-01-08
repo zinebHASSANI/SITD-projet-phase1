@@ -10,6 +10,7 @@
     public class ModuleServices {
 
         public static Module addModule(String intitule,Filiere filiere,Enseignant... chef) {
+
             Module module = new Module();
             module.setIntitule(intitule);
             module.setId(DB.getModId());

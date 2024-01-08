@@ -5,6 +5,7 @@
 
 
     public class DepartementServices {
+
          public static Departement addDept(String intitule, Enseignant... chef){
              Departement departement = new Departement();
              departement.setIntitule(intitule);

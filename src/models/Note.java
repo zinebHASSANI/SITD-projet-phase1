@@ -32,6 +32,7 @@ public class Note {
 
     public Filiere getFiliere() {
         return filiere;
+
     }
 
     public void setFiliere(Filiere filiere) {

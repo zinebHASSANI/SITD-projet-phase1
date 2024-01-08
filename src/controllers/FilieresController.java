@@ -24,6 +24,7 @@ public class FilieresController {
         //"Veuillez sélectionner une option : ")
         int option = Connexion.getIntInput("Veuillez sélectionner une option : ");
         switch(option) {
+
             case 1:
                 createFiliere();
                 break;

@@ -7,6 +7,7 @@ public class Module {
     private Filiere filiere;
 
     public Module() {
+
        }
 
     public Module(String intitule, Enseignant chef, Filiere filiere) {

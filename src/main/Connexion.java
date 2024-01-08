@@ -126,7 +126,7 @@ import services.DB;
 
 
 
-    public static void insertDepartement(Departement departement , Connection cx) throws SQLException {
+    public static void insertDepartement( Departement departement , Connection cx) throws SQLException {
         String query = "INSERT INTO departement (id_departement, intitule,id_enseignant) values (?,?,?)";
 
         PreparedStatement ps = cx.prepareStatement(query);

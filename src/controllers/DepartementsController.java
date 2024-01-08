@@ -111,6 +111,7 @@ public class DepartementsController {
             updateDepartement(DB.departements.get(0), cx);
 
 
+
             showDepartements();
 
             showMenu();

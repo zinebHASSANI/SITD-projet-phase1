@@ -6,6 +6,7 @@ import models.Filiere;
 import java.util.ArrayList;
 
 public class EtudiantServices {
+
        public static Etudiant addEtd(String nom, String prenom, String email, int apogee, Filiere... filiere){
            Etudiant etudiant = new Etudiant();
            etudiant.setNom(nom);

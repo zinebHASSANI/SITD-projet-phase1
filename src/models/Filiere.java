@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
       public class Filiere {
+
           private int id;
           private String intitule;
           private Enseignant chef;

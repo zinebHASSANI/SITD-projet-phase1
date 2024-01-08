@@ -15,6 +15,7 @@ public class EnseignantServices {
 
         enseignant.setId(DB.getEnsId());
         if (dept.length > 0){
+
             enseignant.setDept(dept[0]);
         }
         DB.enseignants.add(enseignant);

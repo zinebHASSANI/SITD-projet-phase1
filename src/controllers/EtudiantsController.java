@@ -86,5 +86,6 @@ public class EtudiantsController {
         EtudiantServices.deleteEtdById(id);
         showEtudiants();
 
+
     }
 }

@@ -80,6 +80,7 @@ public class ModulesController {
         showMenu();
     }
     public static void destroyModule(){
+
         showModules();
         int id = Connexion.getIntInput("Sélecionnez un departement par id :");
         ModuleServices.deleteModuleById(id);
