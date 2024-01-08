@@ -13,6 +13,13 @@ public class Enseignant {
 
     public Enseignant() {
     }
+    public Enseignant(int id,String nom, String prenom, String email, String grade){
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.grade = grade;
+        this.id=id;
+    }
 
     public Enseignant(String nom, String prenom, String email, String grade, Departement dept) {
         this.nom = nom;

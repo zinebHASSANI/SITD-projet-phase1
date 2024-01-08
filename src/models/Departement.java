@@ -1,4 +1,6 @@
 package models;
+import services.DB;
+
 import java.util.ArrayList;
 
 
@@ -10,16 +12,26 @@ import java.util.ArrayList;
         private String intitule;
         private Enseignant chef;
 
+
         ArrayList<Filiere> filieres = new ArrayList<Filiere>();
 
 
         public Departement() {
         }
+        public Departement(int id,String intitule){
+            this.intitule = intitule;
+            this.id=id;
+        }
 
-        public Departement(String intitule, Enseignant chef) {
+        public Departement(int id, String intitule, Enseignant chef) {
             this.intitule = intitule;
             this.chef = chef;
+            this.id=id;
         }
+
+
+
+
 
         public String getIntitule() {
             return intitule;
@@ -53,4 +65,11 @@ import java.util.ArrayList;
             this.id = id;
         }
 
+        @Override
+        public String toString() {
+            return "Departement{" +
+                    "id=" + id +
+                    ", intitule='" + intitule + '\'' +
+                    '}';
+        }
     }

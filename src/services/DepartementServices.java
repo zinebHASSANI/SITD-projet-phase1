@@ -3,7 +3,8 @@
     import models.Enseignant;
     import java.util.ArrayList;
 
-     public class DepartementServices {
+
+    public class DepartementServices {
          public static Departement addDept(String intitule, Enseignant... chef){
              Departement departement = new Departement();
              departement.setIntitule(intitule);
@@ -12,6 +13,15 @@
                  departement.setChef(chef[0]);
              }
              DB.departements.add(departement);
+
+
+
+
+
+
+
+
+
 
              return  departement;
          }

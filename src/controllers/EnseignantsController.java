@@ -1,7 +1,7 @@
 package controllers;
 import models.Enseignant;
 import services.DB;
-import main.Main;
+import main.Connexion;
 import services.DepartementServices;
 import services.EnseignantServices;
 
@@ -18,7 +18,7 @@ public class EnseignantsController {
         System.out.println("0: Pour retourner au menu principal");
 
         //"Veuillez sélectionner une option : ")
-        int option = Main.getIntInput("Veuillez sélectionner une option : ");
+        int option = Connexion.getIntInput("Veuillez sélectionner une option : ");
         switch(option) {
             case 1:
                 createEnseignant();
@@ -33,7 +33,7 @@ public class EnseignantsController {
                 destroyEnseignant();
                 break;
             default:
-                Main.showPrincipalMenu();
+                Connexion.showPrincipalMenu();
         }
     }
     public static void showEnseignants(){
@@ -43,19 +43,19 @@ public class EnseignantsController {
         System.out.print(" | Email : " + enseignant.getEmail() );
         System.out.print("| grade:"+enseignant.getGrade());
 
-           if (! Main.isNull(enseignant.getDept())) {
+           if (! Connexion.isNull(enseignant.getDept())) {
               System.out.print(" | departement " + enseignant.getDept().getIntitule());
          }
         System.out.println("");
     }
 }
     public static void createEnseignant(){
-        String nom = Main.getStringInput("Entrez le nom :");
-        String prenom = Main.getStringInput("Entrez le prenom :");
-        String email = Main.getStringInput("Entrez l'email :");
-        String grade = Main.getStringInput("Entrez grade:");
+        String nom = Connexion.getStringInput("Entrez le nom :");
+        String prenom = Connexion.getStringInput("Entrez le prenom :");
+        String email = Connexion.getStringInput("Entrez l'email :");
+        String grade = Connexion.getStringInput("Entrez grade:");
         DepartementsController.showDepartements();
-        int id = Main.getIntInput("Sélecionnez un departement par id :");
+        int id = Connexion.getIntInput("Sélecionnez un departement par id :");
         EnseignantServices.addEns(nom,prenom,email,grade, DepartementServices.getDeptById(id));
 
         showEnseignants();
@@ -63,13 +63,13 @@ public class EnseignantsController {
     }
     public static void editEnseignant(){
         showEnseignants();
-        int id = Main.getIntInput("Sélecionnez un enseignant par id :");
-        String nom = Main.getStringInput("Entrez nom :");
-        String prenom= Main.getStringInput("Entrez prenom :");
-        String email = Main.getStringInput("Entrez l'email :");
-        String grade = Main.getStringInput("Entrez grade:");
+        int id = Connexion.getIntInput("Sélecionnez un enseignant par id :");
+        String nom = Connexion.getStringInput("Entrez nom :");
+        String prenom= Connexion.getStringInput("Entrez prenom :");
+        String email = Connexion.getStringInput("Entrez l'email :");
+        String grade = Connexion.getStringInput("Entrez grade:");
         DepartementsController.showDepartements();
-        int iddept = Main.getIntInput("Sélecionnez un departement par id  :");
+        int iddept = Connexion.getIntInput("Sélecionnez un departement par id  :");
 
         EnseignantServices.updateEns(id, nom,prenom,email,grade, DepartementServices.getDeptById(iddept));
 
@@ -80,7 +80,7 @@ public class EnseignantsController {
 
     public static void destroyEnseignant(){
         showEnseignants();
-        int id = Main.getIntInput("Sélecionnez un enseignant par id :");
+        int id = Connexion.getIntInput("Sélecionnez un enseignant par id :");
         EnseignantServices.deleteEnsById(id);
         showEnseignants();
 

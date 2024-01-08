@@ -1,6 +1,6 @@
 package controllers;
 
-import main.Main;
+import main.Connexion;
 import models.Module;
 import services.DB;
 import services.ModuleServices;
@@ -20,7 +20,7 @@ public class ModulesController {
         System.out.println("0: Pour retourner au menu principal");
 
         //"Veuillez sélectionner une option : ")
-        int option = Main.getIntInput("Veuillez sélectionner une option : ");
+        int option = Connexion.getIntInput("Veuillez sélectionner une option : ");
         switch(option) {
             case 1:
                 createModule();
@@ -35,17 +35,17 @@ public class ModulesController {
                 destroyModule();
                 break;
             default:
-                Main.showPrincipalMenu();
+                Connexion.showPrincipalMenu();
         }
     }
     public static void showModules(){
         for (Module module : DB.modules) {
             System.out.print("Id : " + module.getId());
             System.out.print(" | Intitulé : " + module.getIntitule());
-            if (! Main.isNull(module.getChef())) {
+            if (! Connexion.isNull(module.getChef())) {
                 System.out.print(" | Chef : " + module.getChef().getNom() + " " + module.getChef().getPrenom());
             }
-            if (! Main.isNull(module.getFiliere())) {
+            if (! Connexion.isNull(module.getFiliere())) {
                 System.out.print(" | filiere : " + module.getFiliere().getIntitule() );
             }
             System.out.println("");
@@ -53,11 +53,11 @@ public class ModulesController {
 
     }
     public static void  createModule(){
-        String intitule = Main.getStringInput("Entrez l'intitulé :");
+        String intitule = Connexion.getStringInput("Entrez l'intitulé :");
         EnseignantsController.showEnseignants();
-        int id = Main.getIntInput("Sélecionnez un enseignant par id :");
+        int id = Connexion.getIntInput("Sélecionnez un enseignant par id :");
         FilieresController.showFilieres();
-        int idfil = Main.getIntInput("Sélecionnez une filiere par id :");
+        int idfil = Connexion.getIntInput("Sélecionnez une filiere par id :");
         ModuleServices.addModule(intitule,FiliereServices.getFiliereById(idfil), EnseignantServices.getEnsById(id));
 
         showModules();
@@ -67,12 +67,12 @@ public class ModulesController {
     }
     public static void editModule(){
         showModules();
-        int id = Main.getIntInput("Sélecionnez un departement par id :");
-        String intitule = Main.getStringInput("Entrez l'intitulé :");
+        int id = Connexion.getIntInput("Sélecionnez un departement par id :");
+        String intitule = Connexion.getStringInput("Entrez l'intitulé :");
         EnseignantsController.showEnseignants();
         FilieresController.showFilieres();
-        int idEns = Main.getIntInput("Sélecionnez un enseignant par id :");
-        int idfil = Main.getIntInput("Sélecionnez une filiere par id :");
+        int idEns = Connexion.getIntInput("Sélecionnez un enseignant par id :");
+        int idfil = Connexion.getIntInput("Sélecionnez une filiere par id :");
 
         ModuleServices.updateModule(id, intitule,FiliereServices.getFiliereById(idfil) ,EnseignantServices.getEnsById(idEns));
 
@@ -81,7 +81,7 @@ public class ModulesController {
     }
     public static void destroyModule(){
         showModules();
-        int id = Main.getIntInput("Sélecionnez un departement par id :");
+        int id = Connexion.getIntInput("Sélecionnez un departement par id :");
         ModuleServices.deleteModuleById(id);
         showModules();}
 }

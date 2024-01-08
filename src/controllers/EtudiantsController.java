@@ -1,5 +1,5 @@
     package controllers;
-    import main.Main;
+    import main.Connexion;
 
     import models.Etudiant;
     import services.DB;
@@ -19,7 +19,7 @@ public class EtudiantsController {
         System.out.println("0: Pour retourner au menu principal");
 
         //"Veuillez sélectionner une option : ")
-        int option = Main.getIntInput("Veuillez sélectionner une option : ");
+        int option = Connexion.getIntInput("Veuillez sélectionner une option : ");
         switch(option) {
             case 1:
                 createEtudiant();
@@ -34,7 +34,7 @@ public class EtudiantsController {
                 destroyEtudiant();
                 break;
             default:
-                Main.showPrincipalMenu();
+                Connexion.showPrincipalMenu();
         }
     }
     public static void showEtudiants(){
@@ -44,7 +44,7 @@ public class EtudiantsController {
             System.out.print("|prenom: " + etudiant.getPrenom());
             System.out.print("|email: " + etudiant.getEmail());
             System.out.print("|apogee : " + etudiant.getApogee());
-            if (! Main.isNull(etudiant.getFiliere())) {
+            if (! Connexion.isNull(etudiant.getFiliere())) {
                 System.out.print(" | filiere : " + etudiant.getFiliere().getIntitule() );
             }
             System.out.println("");
@@ -52,12 +52,12 @@ public class EtudiantsController {
 
     }
     public static void createEtudiant(){
-        String nom = Main.getStringInput("Entrez le nom:");
-        String prenom = Main.getStringInput("Entrez le prenom:");
-        String email = Main.getStringInput("Entrez l'email:");
-        int apogee = Main.getIntInput("Entrez code apogee:");
+        String nom = Connexion.getStringInput("Entrez le nom:");
+        String prenom = Connexion.getStringInput("Entrez le prenom:");
+        String email = Connexion.getStringInput("Entrez l'email:");
+        int apogee = Connexion.getIntInput("Entrez code apogee:");
         FilieresController.showFilieres();
-        int id = Main.getIntInput("Sélecionnez une filiere par id :");
+        int id = Connexion.getIntInput("Sélecionnez une filiere par id :");
 
         EtudiantServices.addEtd(nom,prenom,email,apogee, FiliereServices.getFiliereById(id));
 
@@ -68,13 +68,13 @@ public class EtudiantsController {
     }
     public static void editEtudiant(){
         showEtudiants();
-        int id = Main.getIntInput("Sélecionnez un etudiant par id :");
-        String nom = Main.getStringInput("Entrez nom:");
-        String prenom = Main.getStringInput("Entrez prenom:");
-        String email = Main.getStringInput("Entrez email:");
-        int apogee = Main.getIntInput("Entrez apogee:");
+        int id = Connexion.getIntInput("Sélecionnez un etudiant par id :");
+        String nom = Connexion.getStringInput("Entrez nom:");
+        String prenom = Connexion.getStringInput("Entrez prenom:");
+        String email = Connexion.getStringInput("Entrez email:");
+        int apogee = Connexion.getIntInput("Entrez apogee:");
         FilieresController.showFilieres();
-        int idFil = Main.getIntInput("Sélecionnez une filiere par id :");
+        int idFil = Connexion.getIntInput("Sélecionnez une filiere par id :");
 
         EtudiantServices.updateEtd(id, nom,prenom,email,apogee, FiliereServices.getFiliereById(idFil));
 
@@ -82,7 +82,7 @@ public class EtudiantsController {
         showMenu();}
     public static void destroyEtudiant(){
         showEtudiants();
-        int id = Main.getIntInput("Sélecionnez un etudiant par id :");
+        int id = Connexion.getIntInput("Sélecionnez un etudiant par id :");
         EtudiantServices.deleteEtdById(id);
         showEtudiants();
 

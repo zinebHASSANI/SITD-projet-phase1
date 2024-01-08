@@ -1,7 +1,9 @@
      package services;
+
      import models.*;
      import models.Module;
      import java.util.ArrayList;
+
            public class DB {
     public static int DEPT_ID = 0;
     public static int ENS_ID = 0;
@@ -15,7 +17,8 @@
     public static ArrayList<Etudiant> etudiants = new ArrayList<Etudiant>();
     public static ArrayList<Note> notes = new ArrayList<Note>();
 
-    public  static int getDeptId(){
+
+               public  static int getDeptId(){
         DEPT_ID++;
         return DEPT_ID;
     }
